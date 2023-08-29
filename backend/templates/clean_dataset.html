@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clean Dataset</title>
+    <!-- CSS and JavaScript files here -->
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Clean Dataset</h1>
+            <form method="POST">
+                <!-- Include form fields for data cleaning options if needed -->
+                <button type="submit" class="btn btn-primary">Clean and Update Dataset</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <!-- footer here -->
+    </footer>
+</body>
+</html>
+

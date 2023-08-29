@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Include your CSS styles or link to external stylesheets here -->
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <p>Welcome, {{ username }}!</p>
+        <p>Email: {{ email }}</p>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <a href="{{ url_for('dashboard', page=current_page - 1) }}">Previous</a> |
+            <a href="{{ url_for('dashboard', page=current_page + 1) }}">Next</a>
+        </div>
+    </div>
+</body>
+</html>
+

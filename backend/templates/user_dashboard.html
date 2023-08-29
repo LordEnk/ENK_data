@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <!-- CSS stylesheets and other metadata -->
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="user-profile">
+            <h1>Welcome, {{ user.username }}!</h1>
+            <div class="user-details">
+                <p>Email: {{ user.email }}</p>
+                <!-- more user details as needed -->
+            </div>
+        </section>
+        <section class="dashboard-content">
+            <!-- Display user-specific content and features here -->
+            <h2>Welcome, {{ username }}</h2>
+            <p>Email: {{ email }}</p>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation">
+                <a href="{{ url_for('dashboard', page=current_page - 1) }}">Previous</a> |
+                <a href="{{ url_for('dashboard', page=current_page + 1) }}">Next</a>
+            </div>
+
+            <!-- List User's Datasets -->
+            <h2>Your Datasets</h2>
+            <ul>
+                {% for dataset in datasets %}
+                    <li><a href="{{ url_for('data_management.clean_dataset', dataset_id=dataset.id) }}">{{ dataset.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <!-- footer goes here -->
+    </footer>
+</body>
+</html>
+

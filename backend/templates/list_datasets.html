@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Datasets</title>
+    <!-- CSS and JavaScript files here -->
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>List Datasets</h1>
+            <ul class="list-group">
+                {% for dataset in datasets %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('data_management.clean_dataset', dataset_id=dataset.id) }}">
+                            {{ dataset.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <!-- footer here -->
+    </footer>
+</body>
+</html>
+
