@@ -1,0 +1,148 @@
+/* styles for common elements */
+body, h1, h2, p, a, .form-group, label, input[type="text"], input[type="email"], input[type="password"], .btn-primary, .flash-messages, .error-page, .charts, select, .navigation-bottom, footer, .alert, .data-table, table, nav, .nav-btn, .list-group-item, .container-form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Background color and font family for the page */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Common styles for containers */
+.container, .container-form, .error-page, .charts, .data-table, .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Heading styles */
+h1, h2 {
+    color: #333;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Link styles */
+a, .nav-btn {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Navigation button styles */
+.nav-btn, .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Form group styles */
+.form-group, label, input[type="text"], input[type="email"], input[type="password"], #is_guest {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Checkbox label styles */
+#is_guest {
+    margin-left: 5px;
+}
+
+/* Flash messages styles */
+.flash-messages li {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Styles for error pages */
+.error-page h1, .error-404 h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.error-page p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Styles for the 404 error page */
+.error-404 {
+    background-color: #ffcccc;
+    color: #ff0000;
+}
+
+/* Styles for the 500 error page */
+.error-500 {
+    background-color: #ffcc99;
+    color: #ff6600;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+/* Footer styles */
+footer, footer p {
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    font-size: 14px;
+    color: #333;
+}
+

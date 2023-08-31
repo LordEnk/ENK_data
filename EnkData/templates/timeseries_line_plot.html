@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Line Plot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Time Series Line Plot</h1>
+        <img src="data:image/png;base64,{{ timeserieslineplot_img }}" alt="Time Series Line Plot" class="charts">
+        <a href="{{ url_for('visualizations.visualize') }}">Back to Visualizations</a>
+    </div>
+</body>
+</html>
+

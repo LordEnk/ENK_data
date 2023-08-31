@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Chart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Line Chart</h1>
+        <img src="data:image/png;base64,{{ line_chart_img }}" alt="Line Chart" class="charts">
+        <a href="{{ url_for('visualizations.visualize') }}">Back to Visualizations</a>
+    </div>
+</body>
+</html>
+

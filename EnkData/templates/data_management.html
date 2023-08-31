@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Management</title>
+    <!-- CSS link here -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Data Management</h1>
+            {% if outliers_detected %}
+                <div class="alert alert-warning" role="alert">
+                    Outliers have been detected and handled.
+                </div>
+            {% endif %}
+            <div class="data-table">
+                {{ data_table | safe }}
+            </div>
+        </div>
+    </main>
+    <footer>
+	    <!-- footer -->
+	<p>&copy; ENK 2023 | 256772567472</p>
+    </footer>
+</body>
+</html>
+

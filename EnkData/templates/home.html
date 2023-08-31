@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ data.title }}</h1>
+        <p>{{ data.description }}</p>
+
+        <!-- Brief Explanation of the System -->
+        <h2>About the System</h2>
+        <p>
+            This is a system designed to clean and visualize data. It helps users import and analyze data, perform data cleaning, and create visualizations based on their needs.
+        </p>
+
+        <!-- Navigation Buttons (Displayed as a Vertical List) -->
+        <div class="navigation">
+            <ul>
+                {% if current_page > 0 %}
+                    <li><a href="{{ url_for('home.navigation', page=current_page - 1) }}">Previous</a></li>
+                {% endif %}
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/guest-login">Guest Login</a></li>
+                {% if current_page < max_page %}
+                    <li><a href="{{ url_for('home.navigation', page=current_page + 1) }}">Next</a></li>
+                {% endif %}
+                <!-- more navigation links for other pages as needed -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

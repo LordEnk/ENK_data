@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualize Data</title>
+
+    <!-- Include your CSS styles or link to external stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h1>Visualize Data</h1>
+            <form method="POST" action="{{ url_for('visualizations.visualize') }}">
+                <!-- Select Columns for Visualization -->
+                <div class="form-group">
+                    <label for="selected_columns">Select Columns:</label>
+                    <select id="selected_columns" name="selected_columns" multiple required>
+                        {% for column in columns %}
+                            <option value="{{ column }}">{{ column }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Select Data Types for Columns -->
+                <div class="form-group">
+                    <label for="data_types">Select Data Types:</label>
+                    <select id="data_types" name="data_types" multiple required>
+                        <option value="numeric">Numeric</option>
+                        <option value="categorical">Categorical</option>
+                        <option value="datetime64[ns]">Datetime</option>
+                        <option value="object">Object</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Generate Recommendations</button>
+                </div>
+            </form>
+
+            <!-- Display Recommendations -->
+            {% if recommendations %}
+                <h2>Recommended Visualizations:</h2>
+                <ul>
+                    {% for recommendation in recommendations %}
+                        <li>{{ recommendation }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <!-- Your footer content here -->
+        <p>&copy; ENK 2023 | 256772567472</p>
+        <div class="navigation-bottom">
+            <a href="{{ url_for('visualizations', page=current_page - 1) }}" class="nav-btn">Previous</a>
+            <a href="{{ url_for('visualizations', page=current_page + 1) }}" class="nav-btn">Next</a>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" action="/login">
+            <!-- Username Input -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <!-- Forgot Password Link -->
+            <div class="form-group">
+                <a href="{{ url_for('auth.forgot_password') }}">Forgot your password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+
+        <!-- Display flash messages here -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <footer>
+        <p>&copy; ENK 2023 | 256772567472</p>
+    </footer>
+</body>
+</html>
+

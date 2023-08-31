@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	<header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST" action="/register">
+            <!-- Username Input -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
+	    <!-- Guest User Checkbox -->
+            <div class="form-group">
+                <label for="is_guest">Register as a guest?</label>
+                <input type="checkbox" id="is_guest" name="is_guest">
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+
+        <!-- Display flash messages here -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+	<!-- Prompt for Username -->
+        {% if not request.form.get('username') %}
+            <p>Please enter a username or choose to register as a guest.</p>
+        {% endif %}
+    </div>
+    <footer>
+        <p>&copy; ENK 2023 | 256772567472</p>
+    </footer>
+</body>
+</html>
+

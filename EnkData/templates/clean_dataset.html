@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Dataset</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Navigation bar with Next and Previous buttons -->
+        <nav>
+            <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+            <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Clean Dataset</h1>
+            <form method="POST">
+                <!-- Form fields for data cleaning options -->
+                <div class="form-group">
+                    <label for="error_correction">Error Correction:</label>
+                    <select id="error_correction" name="error_correction" class="form-control">
+                        <option value="none">None</option>
+                        <option value="regex">Regular Expression</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data_type_conversion">Data Type Conversion:</label>
+                    <select id="data_type_conversion" name="data_type_conversion" class="form-control">
+                        <option value="none">None</option>
+                        <option value="date_format">Date Format</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="outlier_handling">Outlier Handling:</label>
+                    <select id="outlier_handling" name="outlier_handling" class="form-control">
+                        <option value="none">None</option>
+                        <option value="iqr_method">IQR Method</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <!-- Include form fields for other data cleaning options if needed -->
+
+                <button type="submit" class="btn btn-primary">Clean and Update Dataset</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    <!-- Navigation buttons at the bottom, horizontally aligned -->
+    <div class="navigation-bottom">
+        <button class="nav-btn" onclick="location.href='{{ url_for('previous_page') }}'">Previous</button>
+        <button class="nav-btn" onclick="location.href='{{ url_for('next_page') }}'">Next</button>
+    </div>
+     <footer>
+        <!-- Footer content with copyright information -->
+        <p>&copy; ENK 2023 | 256772567472</p>
+    </footer>
+</body>
+</html>
+

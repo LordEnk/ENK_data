@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treemap</title>
+    
+    <!-- Include necessary CSS or stylesheets here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <!-- Include Plotly library for interactive treemap -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Treemap</h1>
+        <div id="treemap" style="width: 100%; height: 600px;"></div>
+        <a href="{{ url_for('visualizations.visualize') }}">Back to Visualizations</a>
+    </div>
+
+    <script>
+        // should replace this JavaScript code with the actual Treemap data and configuration
+        var treemapData = {{ treemap_html|safe }};
+
+        // layout and configuration options for the Treemap
+        var treemapLayout = {
+            margin: { t: 0, l: 0, r: 0, b: 0 }
+        };
+
+        // Create the Treemap chart
+        Plotly.newPlot('treemap', treemapData, treemapLayout);
+    </script>
+</body>
+</html>
+
