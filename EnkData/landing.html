@@ -1,0 +1,139 @@
+<!-- landing.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ENKData</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Additional CSS styles specific to the landing page*/
+        /* Intro Section Styles */
+        .intro-section {
+            text-align: center;
+            padding: 100px 0;
+            background-image: url('https://drive.google.com/file/d/1fd8cFSCXbT9tW0Yzu3rhs4Vgr87AITR8/view?usp=sharing');
+            background-size: cover;
+            color: #fff;
+        }
+
+        .intro-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .intro-section .nav-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .intro-section .nav-btn.next {
+            background-color: #28a745;
+        }
+
+        /* Key Features Section Styles */
+        .key-features {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #f4f4f4;
+        }
+
+        .feature {
+            margin-bottom: 40px;
+        }
+
+        .feature h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* About Section Styles */
+        .about-section {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .about-section .social-links {
+            margin-top: 20px;
+        }
+
+        .about-section .social-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation links to other sections -->
+        <nav>
+            <a href="#login">Log In</a> |
+            <a href="#data-cleaning">Data Cleaning</a> |
+            <a href="#visualize">Visualize</a> |
+            <a href="/dashboard" class="nav-btn btn-primary">Go to App</a>
+        </nav>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <h1>Welcome to ENKData</h1>
+        <p>This app for data cleaning and visualizations</p>
+        <a href="#key-features" class="nav-btn">Next</a>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="key-features" id="key-features">
+        <div class="feature">
+            <h2><img src="https://drive.google.com/file/d/1ftEGgZffYHQeTsQqkBMZ0CtDgFbx7e8u/view?usp=sharing" alt="Login Icon" class="icon">Log In</h2>
+            <p>Create an account with just an ID and username to enjoy all these key features or log in as a guest for limited privileges.</p>
+        </div>
+        <div class="feature">
+            <h2><img src="https://drive.google.com/file/d/1fwv_y2XlUl0fmTB5si7pv_4zf_oc1HGM/view?usp=sharing" alt="Data Cleaning Icon" class="icon">Data Cleaning</h2>
+            <p>Cleaning data is just a tap of a button. Select custom data cleaning features from the vast provided options.</p>
+        </div>
+        <div class="feature">
+            <h2><img src="https://drive.google.com/file/d/1fvxLM5TcTUq2lbeukS7p8w46jrhUFv0w/view?usp=sharing" alt="Visualize Icon" class="icon">Visualize</h2>
+            <p>You can also visualize the data. Use custom recommendations based on data types or select your own custom visuals.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <p>This is a portfolio project for Holberton School. When I was still at university as a quantitative economics student, I had challenges with my data cleaning algorithms and knowing which kind of data requires which visuals. I felt that I should create this app to help students like me and other researchers make better meaning out of their data Am Enock Ssesanga and an ALX SE student and this is my portfolio project you can reach me via the links below, Thank you all.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/EnockSsesanga" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/enock-ssesannga-60243611b" target="_blank">LinkedIn</a>
+            <a href="https://github.com/LordEnk/LordEnk.github.io" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; ENK 2023 | 256772567472</p>
+    </footer>
+</body>
+</html>
+

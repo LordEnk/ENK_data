@@ -29,6 +29,7 @@ class User(db.Model, UserMixin):
     reset_token_expiration = db.Column(db.DateTime)  # Add reset_token_expiration column
 
 # Register the blueprints
+from routes.landing_page_route import landing_bp
 from routes.home_route import home_bp
 from routes.auth_routes import auth_bp
 from routes.guest_route import guest_bp
@@ -37,6 +38,7 @@ from routes.dashboard_route import dashboard_bp
 from routes.data_management_route import data_management_bp
 from routes.visualizations_route import visualizations_bp
 
+app.register_blueprint(landing_bp)
 app.register_blueprint(home_bp)
 app.register_blueprint(auth_bp)
 app.register_blueprint(guest_bp)
